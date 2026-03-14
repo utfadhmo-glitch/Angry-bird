@@ -89,7 +89,14 @@ button{
 }
 #yesBtn{ background:white; color:#ff4e88;}
 #yesBtn:hover{ transform:scale(1.1);}
-#noBtn{ background:black; color:white; position:relative;}
+function moveNoBtn(){
+  noBtn.style.position="fixed";
+  noBtn.style.top=Math.random()*(window.innerHeight-60)+"px";
+  noBtn.style.left=Math.random()*(window.innerWidth-120)+"px";
+}
+
+noBtn.addEventListener("mouseenter",moveNoBtn);
+noBtn.addEventListener("touchstart",moveNoBtn);
 .love-photo{
   width:240px;
   max-width:90%;
